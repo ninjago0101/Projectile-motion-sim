@@ -34,23 +34,23 @@ def plot_trajectory(t, x, y):
     plt.show()
 
 def main():
-    print("Welcome to the Projectile Motion Simulator!")
+    print("welcome to the Projectile Motion Simulator!")
     try:
-        v0 = float(input("Enter the initial velocity (m/s): "))
-        angle = float(input("Enter the launch angle (degrees): "))
+        v0 = float(input("enter the initial velocity (m/s): "))
+        angle = float(input("enter the launch angle (degrees): "))
         t_max = 2 * (v0 * np.sin(np.radians(angle)) / 9.81)  # Calculate time of flight
-        dt = float(input("Enter the time step for the simulation (seconds): "))
+        dt = float(input("enter the time step for the simulation (seconds): "))
 
-        print("\nSimulating projectile motion... Please wait!")
+        print("\neimulating projectile motion... Please wait!")
         t, x, y, range_of_projectile, max_height = projectile_motion(v0, angle, t_max, dt)
 
         plot_trajectory(t, x, y)
 
-        print(f"\nRange of the projectile: {range_of_projectile:.2f} meters")
-        print(f"Maximum height reached: {max_height:.2f} meters")
+        print(f"\nrange of the projectile: {range_of_projectile:.2f} meters")
+        print(f"maximum height reached: {max_height:.2f} meters")
 
     except ValueError:
-        print("Invalid input! Please enter valid numbers.")
+        print(" please enter valid numbers.")
 
 if __name__ == "__main__":
     main()
